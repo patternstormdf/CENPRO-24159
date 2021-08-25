@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "0.3",
+  "description": "Migrates an Aurora cluster to Graviton2",
+  "assumeRole": "{{ AutomationAssumeRole }}",
+  "parameters": {
+    "AutomationAssumeRole": {
+      "type": "String"
+    },
+    "ClusterId": {
+      "type": "String"
+    }
+  },
+  "mainSteps": [
+    {
+      "name":"sleep",
+      "action":"aws:sleep",
+      "inputs":{
+        "Duration":"PT2S"
+      }
+    }
+  ]
+}
