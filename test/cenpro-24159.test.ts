@@ -48,12 +48,32 @@ test('test runbook', async (done) => {
                         Name: "ClusterId",
                         Selector: "$.DBClusters[0].DBClusterIdentifier",
                         Type: "String"
+                    },
+                    {
+                        Name: "CustomEndpoints",
+                        Selector: "$.DBClusters[0].CustomEndpoints",
+                        Type: "StringList"
+                    },
+                    {
+                        Name: "Engine",
+                        Selector: "$.DBClusters[0].Engine",
+                        Type: "String"
+                    },
+                    {
+                        Name: "EngineVersion",
+                        Selector: "$.DBClusters[0].EngineVersion",
+                        Type: "String"
                     }
                 ],
                 isEnd: true
             }
         ],
-        outputs: ["describeCluster.ClusterId"]
+        outputs: [
+            "describeCluster.ClusterId",
+            "describeCluster.Engine",
+            "describeCluster.EngineVersion",
+            "describeCluster.CustomEndpoints"
+        ]
     }
 
     SDK.profile(profile)

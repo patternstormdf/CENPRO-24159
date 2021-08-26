@@ -12,7 +12,7 @@ export namespace SSM {
         description?: string
         parameters?: Code.Parameters
         mainSteps: Code.Steps
-        outputs: [string]
+        outputs: Array<string>
     }
 
     export namespace Code {
@@ -78,11 +78,11 @@ export namespace SSM {
             export interface ExecuteAWSApi extends BaseStep {
                 action: "aws:executeAwsApi"
                 inputs: ExecuteAWSApi.Inputs
-                outputs: [{
+                outputs: Array<{
                     Name: string,
                     Selector: string
                     Type: string
-                }]
+                }>
             }
 
             export namespace ExecuteAWSApi {
